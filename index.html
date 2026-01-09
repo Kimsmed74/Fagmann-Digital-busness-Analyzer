@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analyzer | AI-drevet Innsikt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div class="glass-container">
+        <header>
+            <div class="nav-links">
+                <a href="architect.html" class="nav-link">AI Tool Architect →</a>
+            </div>
+            <h1 class="gradient-text">Business Analyzer</h1>
+            <p>Analyser bedrifter, identifiser automatiseringspotensial og spar tid.</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-group">
+                <input type="text" id="companyUrl" placeholder="https://eksempel.no" required>
+                <input type="text" id="companyName" placeholder="Bedriftsnavn (valgfritt)">
+                <button id="analyzeBtn">Start Analyse</button>
+            </div>
+        </section>
+
+        <section id="loadingSection" class="hidden">
+            <div class="loader"></div>
+            <p id="loadingMsg">Skraper nettside og analyserer data med AI...</p>
+        </section>
+
+        <section id="resultsSection" class="hidden">
+            <div class="dashboard-grid">
+                <div class="card" id="companyCard">
+                    <h3>Bedriftsinfo</h3>
+                    <div id="companySummary"></div>
+                </div>
+                <div class="card" id="financialCard">
+                    <h3>Regnskapstall</h3>
+                    <div id="financialSummary"></div>
+                </div>
+            </div>
+
+            <div class="card report-card">
+                <h3>AI Rapport & Automatisering</h3>
+                <div id="aiReport" class="markdown-content"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="copyReportBtn">Kopier Rapport</button>
+                <button id="downloadPdfBtn">Eksporter PDF</button>
+                <button id="newAnalysisBtn">Ny Analyse</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
